@@ -31,6 +31,6 @@
     "testem": "^0.8.0-0"
   },
   "dependencies": {
-    "moment": "*"
+    "moment": ">=2.10"
   }
 }

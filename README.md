@@ -1,3 +1,5 @@
+[ ![Codeship Status for cdaringe/ampersand-state-mixin-datatype-iso-date](https://codeship.com/projects/3c615720-04cc-0133-3db8-1a88c4115bd9/status?branch=master)](https://codeship.com/projects/89403)
+
 # ampersand-state-mixin-datatype-iso-date
 Adds ISO 8601 date functionality to ampersand state.  This module stores dates explicity as full ISO
 8601 strings with client locale TZ.  This makes all timestamps **lossless*, vs using UTC ISO stamps or
@@ -8,7 +10,7 @@ Unix time (epoch) values.
 "2015-07-04T15:26:19-07:00" // good! lossless timestamp data, keeping client TZ. we use this
 "2015-07-04T22:26:19+00:00" // poor! UTC normalized.  drops user TZ
 1436048779 // poor! unix time, UTC normalized (maybe!*). drops user TZ
-``
+```
 
 You may want to specify something like the following in your ampersand-states or ampersand-models:
 
@@ -16,10 +18,7 @@ You may want to specify something like the following in your ampersand-states or
 var State = require('ampersand-state');
 var DateState = State.extend(isoDateMixin, {
     props: {
-        sometime: {
-            type: 'iso-date',
-            required: true
-        }
+        sometime: 'iso-date'
     }
 });
 ```
