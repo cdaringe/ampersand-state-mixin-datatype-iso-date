@@ -2,13 +2,13 @@
 
 # ampersand-state-mixin-datatype-iso-date
 Adds ISO 8601 date functionality to ampersand state.  This module stores dates explicity as full ISO
-8601 strings with client locale TZ.  This makes all timestamps **lossless*, vs using UTC ISO stamps or
+8601 strings with client locale TZ.  This makes all timestamps **lossless**, vs using UTC ISO stamps or
 Unix time (epoch) values.
 
 ```js
-//e.g.
+// same time, different formats
 "2015-07-04T15:26:19-07:00" // good! lossless timestamp data, keeping client TZ. we use this
-"2015-07-04T22:26:19+00:00" // poor! UTC normalized.  drops user TZ
+"2015-07-04T22:26:19.000Z" // poor! UTC normalized.  drops user TZ
 1436048779 // poor! unix time, UTC normalized (maybe!*). drops user TZ
 ```
 
