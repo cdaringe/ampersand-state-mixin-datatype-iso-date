@@ -21,7 +21,7 @@ var sync = function (cb) {
     };
 };
 
-
+// NOTE: it's assumed that all of the build servers are on UTC, so use UTC as 'local' time
 suite('iso-date mixin', function (s) {
     var d, t1;
 
@@ -31,7 +31,7 @@ suite('iso-date mixin', function (s) {
     });
 
     s.test('iso 8601 identity', sync(function (t) {
-        var dateString =  '2015-07-04T14:52:38-07:00';
+        var dateString =  '2015-07-04T14:52:38+00:00';
         d.sometime = dateString;
         t.equal(dateString, d.sometime, 'iso8601 locale str in === iso8601 locale str out');
     }));
@@ -59,9 +59,9 @@ suite('iso-date mixin', function (s) {
     }));
 
     s.test('js native date support', sync(function (t) {
-        var jsDate = new Date();
+        var jsDate = (new Date()).getTime(); // new Date(); alone returns locale string, not UTC
         d.sometime = jsDate;
-        t.ok(moment(jsDate).format() === d.sometime, 'can use native JS Dates');
+        t.ok(moment(jsDate).isSame(d.sometime), 'can use native JS Dates');
     }));
 
 });
