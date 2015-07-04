@@ -31,7 +31,7 @@ suite('iso-date mixin', function (s) {
     });
 
     s.test('iso 8601 identity', sync(function (t) {
-        var dateString =  '2015-07-04T14:52:38+00:00';
+        var dateString =  moment().format(); // http://momentjs.com/docs/#/parsing/string-formats/
         d.sometime = dateString;
         t.equal(dateString, d.sometime, 'iso8601 locale str in === iso8601 locale str out');
     }));
@@ -59,9 +59,9 @@ suite('iso-date mixin', function (s) {
     }));
 
     s.test('js native date support', sync(function (t) {
-        var jsDate = (new Date()).getTime(); // new Date(); alone returns locale string, not UTC
+        var jsDate = (new Date()).getTime(); // new Date(); alone returns locale string (great!), but we tmp need UTC
         d.sometime = jsDate;
-        t.ok(moment(jsDate).isSame(d.sometime), 'can use native JS Dates');
+        t.ok(moment(jsDate).format() == moment(d.sometime).format(), 'can use native JS Dates');
     }));
 
 });
