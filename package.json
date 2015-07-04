@@ -1,0 +1,35 @@
+{
+  "name": "ampersand-state-mixin-datatype-iso-date",
+  "version": "1.0.0",
+  "description": "Adds a date datatype to ampersand-state using ISO 8601 locale strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "testem ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdaringe/ampersand-state-mixin-datatype-iso-date.git"
+  },
+  "keywords": [
+    "ampersand",
+    "state",
+    "mixin",
+    "datatype",
+    "function"
+  ],
+  "author": "cdaringe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdaringe/ampersand-state-mixin-datatype-function/issues"
+  },
+  "homepage": "https://github.com/cdaringe/ampersand-state-mixin-datatype-function",
+  "devDependencies": {
+    "ampersand-state": "^4.5.3",
+    "pre-commit": "^1.0.6",
+    "tape-suite": "^0.2.1",
+    "testem": "^0.8.0-0"
+  },
+  "dependencies": {
+    "moment": "*"
+  }
+}
