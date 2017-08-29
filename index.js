@@ -6,6 +6,12 @@ module.exports = {
         'iso-date' : {
             set: function(newVal){
                 var newDate;
+                if (newVal === null) {
+                  return {
+                    val : null,
+                    type : 'iso-date'
+                  };
+                }
                 if (newVal._isAMomentObject) {
                     return {
                        val : newVal.format(),
