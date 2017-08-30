@@ -1,6 +1,6 @@
 {
   "name": "ampersand-state-mixin-datatype-iso-date",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds a date datatype to ampersand-state using ISO 8601 locale strings",
   "main": "index.js",
   "scripts": {
